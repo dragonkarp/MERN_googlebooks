@@ -11,7 +11,8 @@ function SavedPage() {
     <div>
         <TopNav />
         <TopBanner />
-
+        <BookSearchBox />
+        <SearchResults />
     </div>
   );
 }

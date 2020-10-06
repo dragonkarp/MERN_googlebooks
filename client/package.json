@@ -1,0 +1,22 @@
+{
+  "name": "googlebooks_client",
+  "version": "1.0.0",
+  "description": "client side packages for googlebooks app",
+  "proxy": "http://localhost:3001/",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3",
+    "react-router-dom": "^4.3.1",
+    "axios": "^0.18.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "author": "Michael Li",
+  "license": "ISC"
+}
