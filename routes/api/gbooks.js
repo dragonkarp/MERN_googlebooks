@@ -1,10 +1,9 @@
 const router = require("express").Router();
-const booksController = require("../../controllers/booksController");
+const googleController = require("../../controllers/gbooksController");
 
 // Matches with "/api/books"
-router.route("/")
-  .get(booksController.findAll)
-  .post(booksController.create);
+router.route("/:title")
+  .get(googleController.findByTitle)
 
 // // Matches with "/api/books/:id"
 // router

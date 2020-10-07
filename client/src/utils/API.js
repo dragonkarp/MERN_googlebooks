@@ -2,7 +2,8 @@ import axios from "axios"
 
 
 export default { 
-    getRandomPeople: () => {
-        return axios.get("https://www.googleapis.com/books/v1/volumes?q=:id")
+    googleBooks: function(title) {
+        console.log(title)
+        return axios.get("/api/gbooks/" + title)
     }
  }
