@@ -1,11 +1,12 @@
 import React from "react";
-import { Container  } from "react-bootstrap"
+import { Container } from "react-bootstrap"
+import ResultCard from "../../components/ResultCard/index.js"
 
-function SearchResults() {
+function SearchResults(props) {
     return (
-        <Container>
-            {/* Code to loop through the return json from API. 
-            For each json file, extract the relevant content and create a div for each inb descending order.*/}
+        <Container fluid>
+            <h3>Results</h3>
+            <ResultCard books={props}/>
         </Container>
   );
 }

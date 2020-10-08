@@ -7,7 +7,7 @@ import api from "../../utils/API"
 
 
 function SearchPage() {
-  const [googleBooks, setGoogleBooks] = useState([])
+  const [returnedGoogleBooks, setReturnedGoogleBooks] = useState([])
   const [title, setTitle] = useState("")
 
   const handleInputChange = event => {
@@ -20,16 +20,27 @@ function SearchPage() {
   const handleSubmit = event => {
     api.googleBooks(title).then(results => {
       console.log(results.data)
+      setReturnedGoogleBooks(...returnedGoogleBooks, results.data)
+      // console.log(returnedGoogleBooks + "This is the main page file, line 24.")
     })
   }
+
   return (
     <div>
         <TopNav />
         <TopBanner />
         <BookSearchBox title={title} handleInputChange={handleInputChange} handleSubmit={handleSubmit} />
-        <SearchResults  />
+        <SearchResults bookList={returnedGoogleBooks} />
     </div>
   );
 }
 
 export default SearchPage;
+
+
+
+// console.log(results.data[0].volumeInfo.title)
+      // console.log(results.data[0].volumeInfo.authors)
+      // console.log(results.data[0].volumeInfo.description)
+      // console.log(results.data[0].volumeInfo.imageLinks.thumbnail)
+      // console.log(results.data[0].volumeInfo.previewLink)
