@@ -6,8 +6,10 @@ import SearchPage from "./pages/SearchPage";
 function App() {
   return (
     <div className="App">
-      <SearchPage />
-      <SavedPage />
+      {/* <SearchPage />
+      <SavedPage /> */}
+
+      
     </div>
   );
 }
