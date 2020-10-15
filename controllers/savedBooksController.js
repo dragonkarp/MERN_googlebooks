@@ -4,9 +4,8 @@ const db = require("../models");
 module.exports = {
   findAll: function(req, res) {
     db.Book
-      .findAll()
+      .find()
       .then(dbModel => res.json(dbModel))
-      .then(console.log(res.json(dbModel)))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {

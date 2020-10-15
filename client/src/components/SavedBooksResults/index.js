@@ -3,13 +3,16 @@ import { Container, ListGroup } from "react-bootstrap"
 import SavedResultCard from "../../components/SavedResultCard/index.js"
 
 function SavedBooks(props) {
+console.log(props._id)
+console.log("Hi")
+
     return (
         <Container fluid>
-            {props.savedBooks > 0  ? (
+            {props.savedBooks ? (
               <ListGroup>
                 {props.savedBooks.map(book => {
                   return (
-                    <ListGroup.Item eventKey={props.id}>
+                    <ListGroup.Item eventKey={props._id}>
                         <SavedResultCard singleBookResult={book} />
                     </ListGroup.Item>
                   );
