@@ -4,7 +4,7 @@ import SavedResultCard from "../../components/SavedResultCard/index.js"
 
 function SavedBooks(props) {
 console.log(props._id)
-console.log("Hi")
+console.log("Hi:,", props.savedBooks)
 
     return (
         <Container fluid>
@@ -12,7 +12,7 @@ console.log("Hi")
               <ListGroup>
                 {props.savedBooks.map(book => {
                   return (
-                    <ListGroup.Item eventKey={props._id}>
+                    <ListGroup.Item Key={book._id}>
                         <SavedResultCard singleBookResult={book} />
                     </ListGroup.Item>
                   );

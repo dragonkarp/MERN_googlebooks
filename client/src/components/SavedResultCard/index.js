@@ -4,7 +4,7 @@ import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap"
 
 // Take one json object, parse data, render a card to display book information. 
 function SavedResultCard(props) {
-
+console.log(props, " Line 7")
     const remove = () => {
 
         console.log("inside remove() front end click ")
@@ -14,20 +14,20 @@ function SavedResultCard(props) {
         <Container fluid>
             <Container>
                 <Row>
-                <Col>{props.title}</Col>
+                <Col>{props.singleBookResult.title}</Col>
                     <Col>
                         <ButtonGroup>
-                            <Button variant="outline-dark" target="_blank" href={props.link}>View</Button>
+                            <Button variant="outline-dark" target="_blank" href={props.singleBookResult.link}>View</Button>
                             <Button variant="outline-dark" onClick={remove}>Remove</Button> 
                         </ButtonGroup>
                     </Col>
                 </Row>
                 <Row>
-                    <Col id="author">Written by: {props.author}</Col>
+                    <Col id="author">Written by: {props.singleBookResult.author}</Col>
                 </Row>
                 <Row>
-                    <Col><img src={props.image} alt={props.title}></img></Col>
-                    <Col>{props.description}</Col>
+                    <Col><img src={props.singleBookResult.image} alt={props.singleBookResult.title}></img></Col>
+                    <Col>{props.singleBookResult.description}</Col>
                 </Row>
             </Container>
         </Container>
