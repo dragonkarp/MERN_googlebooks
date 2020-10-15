@@ -8,4 +8,8 @@ router.route("/saved")
   .get(booksController.findAll)
 
 
+router.route("/saved/:id")
+  .delete(booksController.remove)
+
+
 module.exports = router;

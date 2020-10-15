@@ -1,13 +1,19 @@
 import React from "react";
 import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap"
+import API from "../../utils/API";
 // import api from "../../utils/API"
 
 // Take one json object, parse data, render a card to display book information. 
 function SavedResultCard(props) {
 console.log(props, " Line 7")
-    const remove = () => {
+console.log(props.singleBookResult._id, " Line 9")
+let testItem = (props.singleBookResult._id);
 
-        console.log("inside remove() front end click ")
+    const remove = () => {
+        API.removeBook(testItem)
+
+
+        console.log(testItem, "     line 13!")
     }
 
     return (

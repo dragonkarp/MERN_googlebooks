@@ -9,9 +9,12 @@ export default {
     },
     saveBook: function(bookData) {
         console.log("hello from front end api")
-        return axios.post("/api/books/", bookData).then(console.log("after front end api call"))
+        return axios.post("/api/books/", bookData)
     },
     loadSavedBooks: function() {
         return axios.get("/api/books/saved/")
+    },
+    removeBook: function(id) {
+        return axios.delete("/api/books/saved/" + id)
     }
 }
