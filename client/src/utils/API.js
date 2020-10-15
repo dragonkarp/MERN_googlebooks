@@ -11,7 +11,7 @@ export default {
         console.log("hello from front end api")
         return axios.post("/api/books/", bookData).then(console.log("after front end api call"))
     },
-    findSavedBooks: function() {
-        return axios.get("/api/books/")
+    loadSavedBooks: function() {
+        return axios.get("/api/saved/")
     }
 }
