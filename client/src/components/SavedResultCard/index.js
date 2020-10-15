@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap"
 import api from "../../utils/API"
 
 // Take one json object, parse data, render a card to display book information. 
-function ResultCard(props) {
+function SavedResultCard(props) {
 
     const bookData = {
         title : props.singleBookResult.volumeInfo.title,
@@ -13,7 +13,7 @@ function ResultCard(props) {
         description : props.singleBookResult.volumeInfo.description 
     }
 
-    const save = () => {
+    const remove = () => {
 
         console.log("inside savebook front end click ")
 
@@ -29,7 +29,7 @@ function ResultCard(props) {
                     <Col>
                         <ButtonGroup>
                             <Button variant="outline-dark" target="_blank" href={bookData.link}>View</Button>
-                            <Button variant="outline-dark" onClick={save}>Save</Button> 
+                            <Button variant="outline-dark" onClick={remove}>Remove</Button> 
                         </ButtonGroup>
                     </Col>
                 </Row>
@@ -45,4 +45,4 @@ function ResultCard(props) {
   );
 }
 
-export default ResultCard;
+export default SavedResultCard;

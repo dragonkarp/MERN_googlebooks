@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const booksController = require("../controllers/booksController");
+const booksController = require("../controllers/savedBooksController");
 const Schema = mongoose.Schema;
 
 const bookSchema = new Schema({
