@@ -18,15 +18,12 @@ const [savedBooks, setSavedBooks] = useState([])
 useEffect(() => {
   api.loadSavedBooks()
     .then(results => {
-      console.log(results.data, "line 21")
-      setSavedBooks(...savedBooks, results.data) //There's a bug here. The state doesn't get set.
-      console.log(results.data, "line 23")
-      console.log(results)
-      console.log(savedBooks)
+      setSavedBooks(...savedBooks, results.data) 
     })
-  }, [])
+  }, [savedBooks]) // If we change this to ...}, [savedBooks]) we are given an error. 
 
 
+  
   return (
     <div>
         <TopBanner />
@@ -36,3 +33,9 @@ useEffect(() => {
 }
 
 export default SavedPage;
+
+
+ // console.log(results.data, "line 23")
+      // console.log(results)
+      // console.log(savedBooks)
+            // console.log(results.data, "line 21")
