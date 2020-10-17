@@ -11,9 +11,9 @@ let testItem = (props.singleBookResult._id);
 
     const remove = () => {
         API.removeBook(testItem)
+            .then(API.findAll())
 
 
-        console.log(testItem, "     line 13!")
     }
 
     return (

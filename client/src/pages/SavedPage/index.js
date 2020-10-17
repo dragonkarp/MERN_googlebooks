@@ -15,15 +15,23 @@ function SavedPage() {
 
 const [savedBooks, setSavedBooks] = useState([])
 
-useEffect(() => {
-  api.loadSavedBooks()
+useEffect(() =>  {
+
+  async function doStuff() {
+  await api.loadSavedBooks()
     .then(results => {
       setSavedBooks(...savedBooks, results.data) 
     })
-  }, [savedBooks]) // If we change this to ...}, [savedBooks]) we are given an error. 
+
+  await api.loadSavedBooks()
+  .then(results => {
+    setSavedBooks(...savedBooks, results.data) 
+  })}
+  doStuff()
+  }, []) // If we change this to ...}, [savedBooks]) we are given an error. 
 
 
-  
+
   return (
     <div>
         <TopBanner />
