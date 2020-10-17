@@ -18,17 +18,18 @@ const [savedBooks, setSavedBooks] = useState([])
 useEffect(() =>  {
 
   async function doStuff() {
-  await api.loadSavedBooks()
-    .then(results => {
-      setSavedBooks(...savedBooks, results.data) 
-    })
 
   await api.loadSavedBooks()
   .then(results => {
     setSavedBooks(...savedBooks, results.data) 
   })}
   doStuff()
+
   }, []) // If we change this to ...}, [savedBooks]) we are given an error. 
+
+  // useEffect(() =>  {
+  //   setSavedBooks(api.loadSavedBooks())
+  // }, [])
 
 
 
