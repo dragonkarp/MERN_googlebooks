@@ -13,19 +13,19 @@ function SavedPage() {
   // useEffect to loadBooks() from your saved book database, then set that data to your savedbooks state
   // pass the saved book state to your search results
 
-const [savedBooks, setSavedBooks] = useState([])
+// const [savedBooks, setSavedBooks] = useState([])
 
-useEffect(() =>  {
+// useEffect(() =>  {
 
-  async function doStuff() {
+//   async function doStuff() {
 
-  await api.loadSavedBooks()
-  .then(results => {
-    setSavedBooks(...savedBooks, results.data) 
-  })}
-  doStuff()
+//   await api.loadSavedBooks()
+//   .then(results => {
+//     setSavedBooks(...savedBooks, results.data) 
+//   })}
+//   doStuff()
 
-  }, []) // If we change this to ...}, [savedBooks]) we are given an error. 
+//   }, []) // If we change this to ...}, [savedBooks]) we are given an error. 
 
   // useEffect(() =>  {
   //   setSavedBooks(api.loadSavedBooks())
@@ -36,7 +36,7 @@ useEffect(() =>  {
   return (
     <div>
         <TopBanner />
-        <SavedBooksResults savedBooks={savedBooks}/>
+        {/* <SavedBooksResults savedBooks={savedBooks}/> */}
     </div>
   );
 }
