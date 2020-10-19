@@ -5,15 +5,14 @@ import API from "../../utils/API";
 
 // Take one json object, parse data, render a card to display book information. 
 function SavedResultCard(props) {
-console.log(props, " Line 7")
-console.log(props.singleBookResult._id, " Line 9")
+console.log(props, " Line 7");
+console.log(props.singleBookResult._id, " Line 9");
 let testItem = (props.singleBookResult._id);
 
     const remove = () => {
         API.removeBook(testItem)
-            .then(API.findAll())
-
-
+            .then(API.findAll());
+        console.log("Successfully removed saved book.");
     }
 
     return (
