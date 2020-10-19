@@ -13,12 +13,8 @@ function App() {
         <div>
           <TopNav />
           <Switch>
-            <Route exact path="/">
-              <SearchPage />
-            </Route>
-            <Route exact path="/saved">
-              <SavedPage />
-            </Route>
+            <Route exact path="/" component={SearchPage} />
+            <Route exact path="/saved" component={SavedPage} />
           </Switch>
         </div>
       </Router>
@@ -28,3 +24,12 @@ function App() {
 }
 
 export default App;
+
+{/* <Switch>
+  <Route exact path="/">
+    <SearchPage />
+  </Route>
+  <Route exact path="/saved">
+    <SavedPage />
+  </Route>
+</Switch> */}
