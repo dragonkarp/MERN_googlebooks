@@ -30,3 +30,6 @@ app.use(routes);
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+
+
+ // http://localhost:3001  for the proxy
