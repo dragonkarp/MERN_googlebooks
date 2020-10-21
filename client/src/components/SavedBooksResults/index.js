@@ -10,7 +10,7 @@ console.log("Hi:,", props.savedBooks)
         <Container fluid>
             {props.savedBooks ? (
               <ListGroup>
-                { props.savedBooks ? props.savedBooks.map(book => {
+                { props.savedBooks.length > 0 ? props.savedBooks.map(book => {
                   return (
                     <ListGroup.Item key={book._id}>
                         <SavedResultCard singleBookResult={book} />
