@@ -10,13 +10,13 @@ console.log("Hi:,", props.savedBooks)
         <Container fluid>
             {props.savedBooks ? (
               <ListGroup>
-                {props.savedBooks.map(book => {
+                { props.savedBooks ? props.savedBooks.map(book => {
                   return (
                     <ListGroup.Item key={book._id}>
                         <SavedResultCard singleBookResult={book} />
                     </ListGroup.Item>
                   );
-                })}
+                }) : "No saved books." }
               </ListGroup>
             ) : (
               <h3>No Results to Display</h3>
